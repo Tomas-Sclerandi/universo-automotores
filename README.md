@@ -3,7 +3,6 @@
 Sistema integral para la gestión de cuentas, tareas y recursos internos de Universo Automotores.
 
 ![Dashboard Preview](./dashboard-preview.png)
-*(Nota: Puedes agregar una captura de pantalla aquí)*
 
 ## 🚀 Tecnologías
 
