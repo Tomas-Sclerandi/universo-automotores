@@ -1,0 +1,166 @@
+import { SectorController } from "./controller/SectorController"
+import { UserController } from "./controller/UserController"
+import { TaskController } from "./controller/TaskController"
+import { MeetingController } from "./controller/MeetingController"
+import { CommentController } from "./controller/CommentController"
+import { ResourceController } from "./controller/ResourceController"
+import { checkJwt } from "./middleware/checkJwt"
+import { taskValidation, userCreateValidation, userValidation, taskUpdateValidation } from "./middleware/validators"
+
+export const Routes = [{
+    method: "get",
+    route: "/users",
+    controller: UserController,
+    action: "getAll",
+    middlewares: [checkJwt]
+}, {
+    method: "get",
+    route: "/users/:id",
+    controller: UserController,
+    action: "getOne",
+    middlewares: [checkJwt]
+}, {
+    method: "post",
+    route: "/users",
+    controller: UserController,
+    action: "createUser",
+    middlewares: [checkJwt, ...userCreateValidation]
+}, {
+    method: "delete",
+    route: "/users/:id",
+    controller: UserController,
+    action: "removeUser",
+    middlewares: [checkJwt]
+}, {
+    method: "put",
+    route: "/users/:id",
+    controller: UserController,
+    action: "updateUser",
+    middlewares: [checkJwt, ...userValidation]
+}, {
+    method: "post",
+    route: "/auth/login",
+    controller: UserController,
+    action: "login",
+    middlewares: []
+}, {
+    method: "get",
+    route: "/sectors",
+    controller: SectorController,
+    action: "getAll",
+    middlewares: [checkJwt]
+}, {
+    method: "get",
+    route: "/sectors/:id",
+    controller: SectorController,
+    action: "getOne",
+    middlewares: [checkJwt]
+}, {
+    method: "post",
+    route: "/sectors",
+    controller: SectorController,
+    action: "createSector",
+    middlewares: [checkJwt]
+}, {
+    method: "put",
+    route: "/sectors/:id",
+    controller: SectorController,
+    action: "updateSector",
+    middlewares: [checkJwt]
+}, {
+    method: "delete",
+    route: "/sectors/:id",
+    controller: SectorController,
+    action: "removeSector",
+    middlewares: [checkJwt]
+}, {
+    method: "get",
+    route: "/tasks",
+    controller: TaskController,
+    action: "getAll",
+    middlewares: [checkJwt]
+}, {
+    method: "get",
+    route: "/tasks/:id",
+    controller: TaskController,
+    action: "getOne",
+    middlewares: [checkJwt]
+}, {
+    method: "post",
+    route: "/tasks",
+    controller: TaskController,
+    action: "createTask",
+    middlewares: [checkJwt, ...taskValidation]
+}, {
+    method: "delete",
+    route: "/tasks/:id",
+    controller: TaskController,
+    action: "removeTask",
+    middlewares: [checkJwt]
+}, {
+    method: "put",
+    route: "/tasks/:id",
+    controller: TaskController,
+    action: "updateTask",
+    middlewares: [checkJwt, ...taskUpdateValidation]
+}, {
+    method: "get",
+    route: "/meetings",
+    controller: MeetingController,
+    action: "getAll",
+    middlewares: [checkJwt]
+}, {
+    method: "post",
+    route: "/meetings",
+    controller: MeetingController,
+    action: "create",
+    middlewares: [checkJwt]
+}, {
+    method: "put",
+    route: "/meetings/:id",
+    controller: MeetingController,
+    action: "update",
+    middlewares: [checkJwt]
+}, {
+    method: "delete",
+    route: "/meetings/:id",
+    controller: MeetingController,
+    action: "delete",
+    middlewares: [checkJwt]
+}, {
+    method: "get",
+    route: "/tasks/:taskId/comments",
+    controller: CommentController,
+    action: "getByTask",
+    middlewares: [checkJwt]
+}, {
+    method: "post",
+    route: "/comments",
+    controller: CommentController,
+    action: "create",
+    middlewares: [checkJwt]
+}, {
+    method: "get",
+    route: "/resources",
+    controller: ResourceController,
+    action: "getAll",
+    middlewares: [checkJwt]
+}, {
+    method: "post",
+    route: "/resources",
+    controller: ResourceController,
+    action: "create",
+    middlewares: [checkJwt]
+}, {
+    method: "put",
+    route: "/resources/:id",
+    controller: ResourceController,
+    action: "update",
+    middlewares: [checkJwt]
+}, {
+    method: "delete",
+    route: "/resources/:id",
+    controller: ResourceController,
+    action: "delete",
+    middlewares: [checkJwt]
+}]

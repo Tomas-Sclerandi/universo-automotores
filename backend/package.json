@@ -1,0 +1,32 @@
+{
+   "name": "universe-api",
+   "version": "0.0.1",
+   "description": "Awesome project developed with TypeORM.",
+   "type": "commonjs",
+   "devDependencies": {
+      "@types/cors": "^2.8.19",
+      "@types/express": "^5.0.5",
+      "@types/node": "^22.19.1",
+      "ts-node": "^10.9.2",
+      "typescript": "^5.8.2"
+   },
+   "dependencies": {
+      "@types/bcryptjs": "^2.4.6",
+      "@types/jsonwebtoken": "^9.0.10",
+      "bcryptjs": "^3.0.3",
+      "body-parser": "^2.2.1",
+      "cors": "^2.8.5",
+      "dotenv": "^17.2.3",
+      "express": "^5.1.0",
+      "express-validator": "^7.3.1",
+      "helmet": "^8.1.0",
+      "jsonwebtoken": "^9.0.2",
+      "pg": "^8.14.1",
+      "reflect-metadata": "^0.2.2",
+      "typeorm": "0.3.27"
+   },
+   "scripts": {
+      "start": "ts-node src/index.ts",
+      "typeorm": "typeorm-ts-node-commonjs"
+   }
+}

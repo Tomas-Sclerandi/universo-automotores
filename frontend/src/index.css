@@ -1,0 +1,88 @@
+@import "tailwindcss";
+
+@keyframes slide-in {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes scale-in {
+    from {
+        transform: scale(0.95);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@theme {
+    --color-primary-bg: #E5E7EB;
+    --color-sidebar-bg: #302E32;
+    --color-accent-orange: #CB5529;
+    --color-accent-gold: #E3A957;
+    --color-text-secondary: #9EA6A3;
+
+    /* Semantic names */
+    --color-background: var(--color-primary-bg);
+    --color-surface: #FFFFFF;
+
+    --font-sans: 'Mulish', sans-serif;
+}
+
+.animate-slide-in {
+    animation: slide-in 0.3s ease-out forwards;
+}
+
+.animate-fade-in {
+    animation: fade-in 0.2s ease-out forwards;
+}
+
+.animate-scale-in {
+    animation: scale-in 0.2s ease-out forwards;
+}
+
+/* Base styles for the new theme */
+body {
+    background-color: var(--color-primary-bg);
+    color: #333333;
+    font-family: 'Mulish', sans-serif;
+    /* Ensuring a clean font */
+}
+
+/* Custom Scrollbar for the new theme */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
